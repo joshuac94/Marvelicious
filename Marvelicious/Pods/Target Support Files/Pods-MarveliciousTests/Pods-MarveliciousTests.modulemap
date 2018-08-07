@@ -1,0 +1,6 @@
+framework module Pods_MarveliciousTests {
+  umbrella header "Pods-MarveliciousTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,20 +7,65 @@
 //
 
 import Foundation
+import StringMD5
+
+// Response Sealed Class
+enum MVLServerResponse<T> {
+    case success(T)
+    case failed(Error)
+}
 
 protocol MVLNetworkManagerProtocol {
-    func get(url: String)
+    func get(endpoint: String, data: Data?, completion: @escaping (MVLServerResponse<Data>) -> Void)
 }
 
 class MVLNetworkManager: MVLNetworkManagerProtocol {
-    var apiKey: String!
+    var publicKey: String!
+    var privateKey: String!
+    
     static let shared: MVLNetworkManager = MVLNetworkManager()
     
     init() {
-        guard let key = Bundle.main.getResourceFrom(plist: "Info", resource: "apiKey") as? String else { return }
-        self.apiKey = key
+        guard let publicKey = Bundle.main.getResourceFrom(plist: "Info", resource: "publicKey") as? String,
+            let privateKey = Bundle.main.getResourceFrom(plist: "Info", resource: "privateKey") as? String else { return }
+        
+        self.publicKey = publicKey
+        self.privateKey = privateKey
     }
     
-    func get(url: String) {
+    func get(endpoint: String, data: Data?, completion: @escaping (MVLServerResponse<Data>) -> Void) {
+        
+        guard let url = setupURL(url: endpoint) else { return }
+        var request = URLRequest(url: url)
+        request.httpBody = data
+        request.httpMethod = "GET"
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+
+            if let error = error { 
+                completion(MVLServerResponse.failed(error))
+                return
+            }
+            guard let data = data else { return }
+            completion(MVLServerResponse.success(data))
+        }
+        task.resume()
+    }
+    
+    // MARK: - Helper Methods
+    fileprivate func setupURL(url: String) -> URL? {
+        let timestamp = Date().timeIntervalSince1970.description
+        let hash = "\(timestamp)\(privateKey!)\(publicKey!)".md5
+        
+        var urlComposite = URLComponents(string: url)
+        urlComposite?.queryItems = [
+            URLQueryItem(name: "ts", value: timestamp),
+            URLQueryItem(name: "apikey", value: publicKey),
+            URLQueryItem(name: "hash", value: hash)
+        ]
+        guard let url = urlComposite?.url else { return nil }
+        
+        return url
     }
 }

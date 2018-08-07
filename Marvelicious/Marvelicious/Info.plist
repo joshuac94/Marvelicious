@@ -47,7 +47,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>apiKey</key>
-	<string>PUBLIC-API-KEY</string>
+	<key>publicKey</key>
+	<string>PUBLIC KEY</string>
+	<key>privateKey</key>
+	<string>PRIVATE KEY</string>
 </dict>
 </plist>

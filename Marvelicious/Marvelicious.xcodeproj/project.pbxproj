@@ -16,6 +16,11 @@
 		55A7554F211A02A900E2CE2B /* MVLCharacterProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7554E211A02A900E2CE2B /* MVLCharacterProfileVC.swift */; };
 		55A75554211A02D400E2CE2B /* MVLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A75553211A02D400E2CE2B /* MVLNetworkManager.swift */; };
 		55A75557211A0A2C00E2CE2B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A75556211A0A2C00E2CE2B /* Bundle.swift */; };
+		55A7555A211A0D2600E2CE2B /* MVLCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A75559211A0D2600E2CE2B /* MVLCharacter.swift */; };
+		55A7555C211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7555B211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift */; };
+		55A7555E211A2A6200E2CE2B /* MVLCharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7555D211A2A6200E2CE2B /* MVLCharacterList.swift */; };
+		6007FF6886BCD02F48C71888 /* Pods_MarveliciousTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADEAE7BA1194B3904635B2A /* Pods_MarveliciousTests.framework */; };
+		A0DD21DAA700442870877F20 /* Pods_Marvelicious.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD75BC333E2B1E91BC743DF1 /* Pods_Marvelicious.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ADEAE7BA1194B3904635B2A /* Pods_MarveliciousTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarveliciousTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B21C318418FB71B2537DC9C /* Pods-MarveliciousTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarveliciousTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarveliciousTests/Pods-MarveliciousTests.debug.xcconfig"; sourceTree = "<group>"; };
 		55A75526211A019F00E2CE2B /* Marvelicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvelicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A75529211A019F00E2CE2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A7552E211A019F00E2CE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +49,13 @@
 		55A7554E211A02A900E2CE2B /* MVLCharacterProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterProfileVC.swift; sourceTree = "<group>"; };
 		55A75553211A02D400E2CE2B /* MVLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLNetworkManager.swift; sourceTree = "<group>"; };
 		55A75556211A0A2C00E2CE2B /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		55A75559211A0D2600E2CE2B /* MVLCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacter.swift; sourceTree = "<group>"; };
+		55A7555B211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterListInteractor.swift; sourceTree = "<group>"; };
+		55A7555D211A2A6200E2CE2B /* MVLCharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterList.swift; sourceTree = "<group>"; };
+		92660FED8143DB80EF7F928C /* Pods-Marvelicious.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelicious.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious.release.xcconfig"; sourceTree = "<group>"; };
+		B245AFA2911B5D28A51A7E27 /* Pods-MarveliciousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarveliciousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarveliciousTests/Pods-MarveliciousTests.release.xcconfig"; sourceTree = "<group>"; };
+		FAD271543EAB68CD5279A675 /* Pods-Marvelicious.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelicious.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious.debug.xcconfig"; sourceTree = "<group>"; };
+		FD75BC333E2B1E91BC743DF1 /* Pods_Marvelicious.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvelicious.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0DD21DAA700442870877F20 /* Pods_Marvelicious.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,18 +71,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6007FF6886BCD02F48C71888 /* Pods_MarveliciousTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1461C10A2EDB249205EC8097 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD75BC333E2B1E91BC743DF1 /* Pods_Marvelicious.framework */,
+				2ADEAE7BA1194B3904635B2A /* Pods_MarveliciousTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		55A7551D211A019F00E2CE2B = {
 			isa = PBXGroup;
 			children = (
 				55A75528211A019F00E2CE2B /* Marvelicious */,
 				55A7553D211A019F00E2CE2B /* MarveliciousTests */,
 				55A75527211A019F00E2CE2B /* Products */,
+				F5970094B962138C0D45DDFA /* Pods */,
+				1461C10A2EDB249205EC8097 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +110,7 @@
 		55A75528211A019F00E2CE2B /* Marvelicious */ = {
 			isa = PBXGroup;
 			children = (
+				55A75558211A0D0B00E2CE2B /* Models */,
 				55A75555211A09F200E2CE2B /* Extensions */,
 				55A75550211A02BC00E2CE2B /* Common */,
 				55A75549211A01DC00E2CE2B /* Features */,
@@ -117,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				55A7554C211A028600E2CE2B /* MVLCharacterListVC.swift */,
+				55A7555B211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift */,
 			);
 			path = "Character List";
 			sourceTree = "<group>";
@@ -161,6 +190,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		55A75558211A0D0B00E2CE2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55A75559211A0D2600E2CE2B /* MVLCharacter.swift */,
+				55A7555D211A2A6200E2CE2B /* MVLCharacterList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5970094B962138C0D45DDFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAD271543EAB68CD5279A675 /* Pods-Marvelicious.debug.xcconfig */,
+				92660FED8143DB80EF7F928C /* Pods-Marvelicious.release.xcconfig */,
+				3B21C318418FB71B2537DC9C /* Pods-MarveliciousTests.debug.xcconfig */,
+				B245AFA2911B5D28A51A7E27 /* Pods-MarveliciousTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55A75543211A019F00E2CE2B /* Build configuration list for PBXNativeTarget "Marvelicious" */;
 			buildPhases = (
+				CCF9429D2ADE4732E203CC8C /* [CP] Check Pods Manifest.lock */,
 				55A75522211A019F00E2CE2B /* Sources */,
 				55A75523211A019F00E2CE2B /* Frameworks */,
 				55A75524211A019F00E2CE2B /* Resources */,
+				A1AD0D0E5C198824953521DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55A75546211A019F00E2CE2B /* Build configuration list for PBXNativeTarget "MarveliciousTests" */;
 			buildPhases = (
+				EEDC7A1374949EAAFE0E4B3F /* [CP] Check Pods Manifest.lock */,
 				55A75536211A019F00E2CE2B /* Sources */,
 				55A75537211A019F00E2CE2B /* Frameworks */,
 				55A75538211A019F00E2CE2B /* Resources */,
@@ -259,13 +311,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A1AD0D0E5C198824953521DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/StringMD5/StringMD5.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StringMD5.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCF9429D2ADE4732E203CC8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Marvelicious-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEDC7A1374949EAAFE0E4B3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarveliciousTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55A75522211A019F00E2CE2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				55A7554D211A028600E2CE2B /* MVLCharacterListVC.swift in Sources */,
+				55A7555E211A2A6200E2CE2B /* MVLCharacterList.swift in Sources */,
+				55A7555A211A0D2600E2CE2B /* MVLCharacter.swift in Sources */,
 				55A7554F211A02A900E2CE2B /* MVLCharacterProfileVC.swift in Sources */,
+				55A7555C211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift in Sources */,
 				55A75554211A02D400E2CE2B /* MVLNetworkManager.swift in Sources */,
 				55A75557211A0A2C00E2CE2B /* Bundle.swift in Sources */,
 				55A7552A211A019F00E2CE2B /* AppDelegate.swift in Sources */,
@@ -419,6 +531,7 @@
 		};
 		55A75544211A019F00E2CE2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD271543EAB68CD5279A675 /* Pods-Marvelicious.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -435,6 +548,7 @@
 		};
 		55A75545211A019F00E2CE2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92660FED8143DB80EF7F928C /* Pods-Marvelicious.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -451,6 +565,7 @@
 		};
 		55A75547211A019F00E2CE2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B21C318418FB71B2537DC9C /* Pods-MarveliciousTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +583,7 @@
 		};
 		55A75548211A019F00E2CE2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B245AFA2911B5D28A51A7E27 /* Pods-MarveliciousTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

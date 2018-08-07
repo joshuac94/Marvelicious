@@ -1,0 +1,16 @@
+PODS:
+  - StringMD5 (0.0.1)
+
+DEPENDENCIES:
+  - StringMD5
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - StringMD5
+
+SPEC CHECKSUMS:
+  StringMD5: 3a9f0934c2568185df4ed5cfc2825e989db443a2
+
+PODFILE CHECKSUM: 1a8a7e04ee566de66c8340acc3282c5ddc41e062
+
+COCOAPODS: 1.5.3

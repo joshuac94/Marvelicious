@@ -1,0 +1,6 @@
+framework module StringMD5 {
+  umbrella header "StringMD5-umbrella.h"
+
+  export *
+  module * { export * }
+}

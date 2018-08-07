@@ -8,12 +8,26 @@
 
 import UIKit
 
-class MVLCharacterListVC: UIViewController {
+protocol MVLCharacterListViewProtocol {
+    func displayCharacters(_ models: [MVLCharacter])
+}
 
+class MVLCharacterListVC: UIViewController {
+    
+    // MARK: - Properties
+    var interactor: MVLCharacterListInteractorProtocol!
+    
+    // MARK: - init
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        interactor = MVLCharacterListInteractor(view: self)
+    }
+
+    // MARK: - View Life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MVLNetworkManager.shared.getCharacters()
+        interactor.getCharacters()
     }
 }
 
@@ -31,6 +45,12 @@ extension MVLCharacterListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
-    
 }
+
+// MARK: - Implement View Protocol
+extension MVLCharacterListVC: MVLCharacterListViewProtocol {
+    func displayCharacters(_ models: [MVLCharacter]) {
+        
+    }
+}
+
