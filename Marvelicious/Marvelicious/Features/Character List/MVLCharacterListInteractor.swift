@@ -26,9 +26,9 @@ class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
         MVLNetworkManager.shared.get(endpoint: url, data: nil) { (response) in
             switch response {
             case .success(let data):
-                if let characters = try? JSONDecoder().decode(MVLData.self, from: data) {
-                    debugPrint(characters.data)
-//                    self.view.displayCharacters(characters)
+                if let responseObject = try? JSONDecoder().decode(MVLData.self, from: data),
+                    let characters = responseObject.data?.results {
+                    self.view.displayCharacters(characters)
                 } else {
                     fatalError("@ERROR: Failed to decode response")
                 }

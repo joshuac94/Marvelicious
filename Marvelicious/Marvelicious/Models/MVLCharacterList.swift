@@ -12,7 +12,6 @@ struct MVLData: Codable {
     var data: MVLResults?
 }
 
-
 struct MVLResults: Codable {
-    var list: [MVLCharacter]?
+    var results: [MVLCharacter]?
 }
