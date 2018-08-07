@@ -9,8 +9,12 @@
 import UIKit
 
 class MVLCharacterProfileVC: UIViewController {
+    
+    var character: MVLCharacter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = character?.name
     }
 }

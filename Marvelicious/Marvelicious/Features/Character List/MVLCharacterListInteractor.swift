@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MVLCharacterListInteractorProtocol {
-    func getCharacters()
+    func getCharacters(offset: Int)
 }
 
 class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
@@ -21,9 +21,9 @@ class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
     }
     
     // MARK: - Implement Interactor Protocol
-    func getCharacters() {
+    func getCharacters(offset: Int) {
         let url = "https://gateway.marvel.com/v1/public/characters"
-        MVLNetworkManager.shared.get(endpoint: url, data: nil) { (response) in
+        MVLNetworkManager.shared.get(endpoint: url, offset: offset) { (response) in
             switch response {
             case .success(let data):
                 if let responseObject = try? JSONDecoder().decode(MVLData.self, from: data),

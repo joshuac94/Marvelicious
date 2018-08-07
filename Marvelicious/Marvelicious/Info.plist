@@ -48,8 +48,8 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>publicKey</key>
-	<string>Public Key</string>
+	<string>public</string>
 	<key>privateKey</key>
-	<string>Private Key</string>
+	<string>private</string>
 </dict>
 </plist>

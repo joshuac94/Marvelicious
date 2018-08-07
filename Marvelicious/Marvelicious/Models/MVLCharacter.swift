@@ -12,4 +12,19 @@ struct MVLCharacter: Codable {
     var id: Int?
     var name: String?
     var description: String?
+    var thumbnail: MVLThumbnail?
+    var comics: MVLComicsList?
+}
+
+struct MVLThumbnail: Codable {
+    var path: String?
+}
+
+struct MVLComicsList: Codable {
+    var available: Int?
+    var items: [MVLComic]?
+}
+
+struct MVLComic: Codable {
+    var name: String?
 }

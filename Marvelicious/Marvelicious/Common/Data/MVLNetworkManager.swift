@@ -16,7 +16,7 @@ enum MVLServerResponse<T> {
 }
 
 protocol MVLNetworkManagerProtocol {
-    func get(endpoint: String, data: Data?, completion: @escaping (MVLServerResponse<Data>) -> Void)
+    func get(endpoint: String, offset: Int, completion: @escaping (MVLServerResponse<Data>) -> Void)
 }
 
 class MVLNetworkManager: MVLNetworkManagerProtocol {
@@ -33,11 +33,10 @@ class MVLNetworkManager: MVLNetworkManagerProtocol {
         self.privateKey = privateKey
     }
     
-    func get(endpoint: String, data: Data?, completion: @escaping (MVLServerResponse<Data>) -> Void) {
+    func get(endpoint: String, offset: Int, completion: @escaping (MVLServerResponse<Data>) -> Void) {
         
-        guard let url = setupURL(url: endpoint) else { return }
+        guard let url = setupURL(url: endpoint, offset: offset) else { return }
         var request = URLRequest(url: url)
-        request.httpBody = data
         request.httpMethod = "GET"
         
         let session = URLSession.shared
@@ -54,12 +53,13 @@ class MVLNetworkManager: MVLNetworkManagerProtocol {
     }
     
     // MARK: - Helper Methods
-    fileprivate func setupURL(url: String) -> URL? {
+    fileprivate func setupURL(url: String, offset: Int) -> URL? {
         let timestamp = Date().timeIntervalSince1970.description
         let hash = "\(timestamp)\(privateKey!)\(publicKey!)".md5
         
         var urlComposite = URLComponents(string: url)
         urlComposite?.queryItems = [
+            URLQueryItem(name: "offset", value: "\(offset)"),
             URLQueryItem(name: "ts", value: timestamp),
             URLQueryItem(name: "apikey", value: publicKey),
             URLQueryItem(name: "hash", value: hash)
