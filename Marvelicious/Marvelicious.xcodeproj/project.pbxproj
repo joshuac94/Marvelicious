@@ -19,6 +19,8 @@
 		55A7555A211A0D2600E2CE2B /* MVLCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A75559211A0D2600E2CE2B /* MVLCharacter.swift */; };
 		55A7555C211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7555B211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift */; };
 		55A7555E211A2A6200E2CE2B /* MVLCharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7555D211A2A6200E2CE2B /* MVLCharacterList.swift */; };
+		55A75567211B75DE00E2CE2B /* MVLCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A75565211B75DE00E2CE2B /* MVLCharacterCell.swift */; };
+		55A75568211B75DE00E2CE2B /* MVLCharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A75566211B75DE00E2CE2B /* MVLCharacterCell.xib */; };
 		6007FF6886BCD02F48C71888 /* Pods_MarveliciousTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADEAE7BA1194B3904635B2A /* Pods_MarveliciousTests.framework */; };
 		A0DD21DAA700442870877F20 /* Pods_Marvelicious.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD75BC333E2B1E91BC743DF1 /* Pods_Marvelicious.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		55A75559211A0D2600E2CE2B /* MVLCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacter.swift; sourceTree = "<group>"; };
 		55A7555B211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterListInteractor.swift; sourceTree = "<group>"; };
 		55A7555D211A2A6200E2CE2B /* MVLCharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterList.swift; sourceTree = "<group>"; };
+		55A75565211B75DE00E2CE2B /* MVLCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterCell.swift; sourceTree = "<group>"; };
+		55A75566211B75DE00E2CE2B /* MVLCharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVLCharacterCell.xib; sourceTree = "<group>"; };
 		92660FED8143DB80EF7F928C /* Pods-Marvelicious.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelicious.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious.release.xcconfig"; sourceTree = "<group>"; };
 		B245AFA2911B5D28A51A7E27 /* Pods-MarveliciousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarveliciousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarveliciousTests/Pods-MarveliciousTests.release.xcconfig"; sourceTree = "<group>"; };
 		FAD271543EAB68CD5279A675 /* Pods-Marvelicious.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelicious.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			children = (
 				55A7554C211A028600E2CE2B /* MVLCharacterListVC.swift */,
 				55A7555B211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift */,
+				55A75565211B75DE00E2CE2B /* MVLCharacterCell.swift */,
+				55A75566211B75DE00E2CE2B /* MVLCharacterCell.xib */,
 			);
 			path = "Character List";
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A75534211A019F00E2CE2B /* LaunchScreen.storyboard in Resources */,
+				55A75568211B75DE00E2CE2B /* MVLCharacterCell.xib in Resources */,
 				55A75531211A019F00E2CE2B /* Assets.xcassets in Resources */,
 				55A7552F211A019F00E2CE2B /* Main.storyboard in Resources */,
 			);
@@ -379,6 +386,7 @@
 				55A7554F211A02A900E2CE2B /* MVLCharacterProfileVC.swift in Sources */,
 				55A7555C211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift in Sources */,
 				55A75554211A02D400E2CE2B /* MVLNetworkManager.swift in Sources */,
+				55A75567211B75DE00E2CE2B /* MVLCharacterCell.swift in Sources */,
 				55A75557211A0A2C00E2CE2B /* Bundle.swift in Sources */,
 				55A7552A211A019F00E2CE2B /* AppDelegate.swift in Sources */,
 			);

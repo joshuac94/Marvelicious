@@ -15,7 +15,7 @@ protocol MVLCharacterListViewProtocol {
 class MVLCharacterListVC: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var interactor: MVLCharacterListInteractorProtocol!
     var characters: [MVLCharacter] = []
@@ -31,6 +31,9 @@ class MVLCharacterListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor.getCharacters(offset: characters.count)
+        
+        let characterNib = UINib(nibName: "MVLCharacterCell", bundle: nil)
+        collectionView.register(characterNib, forCellWithReuseIdentifier: "characterCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,28 +55,25 @@ class MVLCharacterListVC: UIViewController {
     }
 }
 
-// MARK: - Table View Delegate
-extension MVLCharacterListVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+// MARK: - Collection View Delegate
+extension MVLCharacterListVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "segueToCharacterBio", sender: self)
-        tableView.deselectRow(at: indexPath, animated: false)
+
     }
 }
 
-// MARK: - Table View Data Source
-extension MVLCharacterListVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+// MARK: - Collection View Delegate
+extension MVLCharacterListVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.characters.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == characters.count - 1 {
-            interactor.getCharacters(offset: characters.count)
-        }
-        
-        let cell = UITableViewCell()
-        cell.textLabel?.text = characters[indexPath.row].name
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell",
+                                                            for: indexPath) as? MVLCharacterCell else { return UICollectionViewCell() }
+        cell.bindData(model: self.characters[indexPath.row])
         return cell
     }
 }
@@ -82,10 +82,10 @@ extension MVLCharacterListVC: UITableViewDataSource {
 extension MVLCharacterListVC: MVLCharacterListViewProtocol {
     func displayCharacters(_ models: [MVLCharacter]) {
         models.forEach { (model) in
-            characters.append(model)
+            self.characters.append(model)
         }
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
 }

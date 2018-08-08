@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gaa-Mb-BMd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zb8-5E-n7k">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,92 +10,99 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Marvelicious-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Characters-->
+        <scene sceneID="kHN-vl-ndN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MVLCharacterListVC" customModule="Marvelicious" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="kpf-qF-Y24" customClass="MVLCharacterListVC" customModule="Marvelicious" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wLC-Zb-ddM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-74-Nc9">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u1j-5k-N6c">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OoN-D0-NoU">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OoN-D0-NoU" id="mGT-C3-OTO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lKb-0y-Kso">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell" id="UzR-rP-wJA" customClass="MVLCharacterCell" customModule="Marvelicious" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1sv-kd-YvG"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iw2-38-1YS"/>
+                                    <outlet property="dataSource" destination="kpf-qF-Y24" id="Z1i-vc-qQ0"/>
+                                    <outlet property="delegate" destination="kpf-qF-Y24" id="ga4-MD-4o4"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fOj-74-Nc9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QeX-67-rBs"/>
-                            <constraint firstItem="fOj-74-Nc9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hSu-DF-Kin"/>
-                            <constraint firstAttribute="bottom" secondItem="fOj-74-Nc9" secondAttribute="bottom" id="m8O-WT-3uc"/>
-                            <constraint firstItem="fOj-74-Nc9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ohC-bz-Elr"/>
+                            <constraint firstItem="u1j-5k-N6c" firstAttribute="trailing" secondItem="8Zr-F6-6YK" secondAttribute="trailing" id="1Lz-Zy-cYB"/>
+                            <constraint firstItem="u1j-5k-N6c" firstAttribute="top" secondItem="8Zr-F6-6YK" secondAttribute="top" id="ENu-6t-lqR"/>
+                            <constraint firstItem="u1j-5k-N6c" firstAttribute="leading" secondItem="8Zr-F6-6YK" secondAttribute="leading" id="Kh7-Uh-1XN"/>
+                            <constraint firstAttribute="bottom" secondItem="u1j-5k-N6c" secondAttribute="bottom" id="kcF-Ja-h5Z"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="8Zr-F6-6YK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Marvelicious" id="LCu-vI-ew5"/>
+                    <navigationItem key="navigationItem" title="Characters" id="w5d-pI-09K"/>
                     <connections>
-                        <outlet property="tableView" destination="fOj-74-Nc9" id="z4t-68-K5h"/>
-                        <segue destination="Pgc-Jo-cEV" kind="show" identifier="segueToCharacterBio" id="gpR-kr-F7p"/>
+                        <outlet property="collectionView" destination="u1j-5k-N6c" id="JcK-V1-zDS"/>
+                        <segue destination="Pgc-Jo-cEV" kind="show" identifier="segueToCharacterBio" id="Z4J-Al-E4k"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZ8-fH-BAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824.79999999999995" y="132.26600985221674"/>
+            <point key="canvasLocation" x="824.79999999999995" y="-542.36453201970448"/>
         </scene>
         <!--Character ProfileVC-->
         <scene sceneID="AjY-1M-iu4">
             <objects>
                 <viewController id="Pgc-Jo-cEV" customClass="MVLCharacterProfileVC" customModule="Marvelicious" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n9u-jG-maZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="ofx-os-RHB"/>
-                    </view>
+                    <navigationItem key="navigationItem" id="Onm-56-eLG">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="7O1-1r-FhM">
+                            <connections>
+                                <action selector="backButtonAction:" destination="Pgc-Jo-cEV" id="kWN-hX-ucX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="7O1-1r-FhM" id="Oeo-sO-zEO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N92-Rt-LIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.2" y="131.52709359605913"/>
+            <point key="canvasLocation" x="1548" y="-542"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="n0p-GK-1qv">
+        <scene sceneID="rbb-fL-eEq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gaa-Mb-BMd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zb8-5E-n7k" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3a8-E1-W6Z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ceq-VK-Hrw">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5CE-fq-8Jq"/>
+                        <segue destination="kpf-qF-Y24" kind="relationship" relationship="rootViewController" id="LOf-B9-8uf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mI7-Pv-rCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ea-dN-bVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="132"/>
+            <point key="canvasLocation" x="132" y="-542"/>
         </scene>
     </scenes>
 </document>
