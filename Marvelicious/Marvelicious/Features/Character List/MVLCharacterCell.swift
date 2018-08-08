@@ -16,10 +16,14 @@ class MVLCharacterCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.contentView.layer.cornerRadius = 12.0
+        self.contentView.backgroundColor = UIColor.white
+//        self.contentView.clipsToBounds = true
     }
     
     func bindData(model: MVLCharacter) {
         characterNameLabel.text = model.name
-        characterNameLabel.text = "\(model.id!)"
+        characterInfoLabel.text = "\(model.id!)"
     }
 }

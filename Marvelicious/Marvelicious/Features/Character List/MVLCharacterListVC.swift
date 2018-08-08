@@ -34,6 +34,7 @@ class MVLCharacterListVC: UIViewController {
         
         let characterNib = UINib(nibName: "MVLCharacterCell", bundle: nil)
         collectionView.register(characterNib, forCellWithReuseIdentifier: "characterCell")
+        collectionView.contentInset = UIEdgeInsetsMake(16.0, 16.0, 16.0, 16.0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,11 +61,22 @@ extension MVLCharacterListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "segueToCharacterBio", sender: self)
-
     }
 }
 
-// MARK: - Collection View Delegate
+// MARK: - collection View Delegate Flow Layout
+extension MVLCharacterListVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.frame.size.width - 32.0,
+                      height: (collectionView.frame.size.height / 2.0) - 48.0)
+    }
+}
+
+// MARK: - Collection View Data Source
 extension MVLCharacterListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.characters.count
