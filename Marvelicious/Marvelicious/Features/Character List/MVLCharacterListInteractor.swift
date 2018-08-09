@@ -22,19 +22,20 @@ class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
     
     // MARK: - Implement Interactor Protocol
     func getCharacters(offset: Int) {
+        self.view.isLoading(true)
         let url = "https://gateway.marvel.com/v1/public/characters"
         MVLNetworkManager.shared.get(endpoint: url, offset: offset) { (response) in
             switch response {
             case .success(let data):
+                self.view.isLoading(false)
                 if let responseObject = try? JSONDecoder().decode(MVLData.self, from: data),
                     let characters = responseObject.data?.results {
                     self.view.displayCharacters(characters)
                 } else {
                     fatalError("@ERROR: Failed to decode response")
                 }
-                
             case .failed(_):
-                break
+                self.view.isLoading(false)
             }
         }
     }

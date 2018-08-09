@@ -1,16 +1,26 @@
 PODS:
+  - lottie-ios (2.5.0)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - StringMD5 (0.0.1)
 
 DEPENDENCIES:
+  - lottie-ios
+  - SDWebImage
   - StringMD5
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - lottie-ios
+    - SDWebImage
     - StringMD5
 
 SPEC CHECKSUMS:
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   StringMD5: 3a9f0934c2568185df4ed5cfc2825e989db443a2
 
-PODFILE CHECKSUM: 1a8a7e04ee566de66c8340acc3282c5ddc41e062
+PODFILE CHECKSUM: cc612d55864f4759e2add370eb43269ee826d8e0
 
 COCOAPODS: 1.5.3

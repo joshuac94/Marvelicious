@@ -59,6 +59,7 @@ class MVLNetworkManager: MVLNetworkManagerProtocol {
         
         var urlComposite = URLComponents(string: url)
         urlComposite?.queryItems = [
+            URLQueryItem(name: "limit", value: "50"),
             URLQueryItem(name: "offset", value: "\(offset)"),
             URLQueryItem(name: "ts", value: timestamp),
             URLQueryItem(name: "apikey", value: publicKey),

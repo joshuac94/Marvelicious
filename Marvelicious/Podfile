@@ -8,6 +8,8 @@ target 'Marvelicious' do
   # Pods for Marvelicious
 
   pod 'StringMD5'
+  pod 'SDWebImage'
+  pod 'lottie-ios'
 
   target 'MarveliciousTests' do
     inherit! :search_paths

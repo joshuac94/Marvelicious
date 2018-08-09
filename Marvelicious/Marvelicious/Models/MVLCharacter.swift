@@ -18,6 +18,12 @@ struct MVLCharacter: Codable {
 
 struct MVLThumbnail: Codable {
     var path: String?
+    var fileType: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case path
+        case fileType = "extension"
+    }
 }
 
 struct MVLComicsList: Codable {

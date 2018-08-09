@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D897F7BF7049C3F207AE75F455C7239"
+               BlueprintIdentifier = "BE2819B3B5C9FC541CBA6EF29647BF32"
                BlueprintName = "StringMD5"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "StringMD5.framework">

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Lottie
 
 protocol MVLCharacterListViewProtocol {
     func displayCharacters(_ models: [MVLCharacter])
+    func isLoading(_ isLoading: Bool)
 }
 
 class MVLCharacterListVC: UIViewController {
@@ -20,6 +22,7 @@ class MVLCharacterListVC: UIViewController {
     var interactor: MVLCharacterListInteractorProtocol!
     var characters: [MVLCharacter] = []
     var selectedIndex: Int?
+    var loadingView: LOTAnimationView!
     
     // MARK: - init
     required init?(coder aDecoder: NSCoder) {
@@ -30,16 +33,34 @@ class MVLCharacterListVC: UIViewController {
     // MARK: - View Life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.getCharacters(offset: characters.count)
+        
+        collectionView.contentInset = UIEdgeInsetsMake(8.0, 8.0, 8.0, 8.0)
         
         let characterNib = UINib(nibName: "MVLCharacterCell", bundle: nil)
         collectionView.register(characterNib, forCellWithReuseIdentifier: "characterCell")
-        collectionView.contentInset = UIEdgeInsetsMake(16.0, 16.0, 16.0, 16.0)
+        
+        let loadNib = UINib(nibName: "MVLLoadCell", bundle: nil)
+        collectionView.register(loadNib, forCellWithReuseIdentifier: "loadMoreCell")
+        
+        
+        setupLoadingView()
+        interactor.getCharacters(offset: characters.count)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         selectedIndex = nil
+    }
+    
+    // MARK: - Helper Methods
+    fileprivate func setupLoadingView() {
+        loadingView = LOTAnimationView(name: "loading")
+        self.view.addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.widthAnchor.constraint(equalToConstant: 85.0).isActive = true
+        loadingView.heightAnchor.constraint(equalToConstant: 85.0).isActive = true
+        loadingView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        loadingView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
     
     // MARK: - Prepare for Segue
@@ -59,8 +80,12 @@ class MVLCharacterListVC: UIViewController {
 // MARK: - Collection View Delegate
 extension MVLCharacterListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
-        performSegue(withIdentifier: "segueToCharacterBio", sender: self)
+        if indexPath.row == characters.count {
+            interactor.getCharacters(offset: characters.count)
+        } else {
+            selectedIndex = indexPath.row
+            performSegue(withIdentifier: "segueToCharacterBio", sender: self)
+        }
     }
 }
 
@@ -71,22 +96,40 @@ extension MVLCharacterListVC: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.frame.size.width - 32.0,
-                      height: (collectionView.frame.size.height / 2.0) - 48.0)
+        switch UIDevice.current.orientation {
+        case .landscapeLeft, .landscapeRight:
+            return CGSize(width: (collectionView.frame.size.width / 3) - 16.0,
+                          height: (collectionView.frame.size.height) - 16.0)
+        default:
+            if indexPath.row == characters.count {
+                return CGSize(width: (collectionView.frame.size.width) - 16.0,
+                              height: (collectionView.frame.size.height / 6) - 16.0)
+            } else {
+                return CGSize(width: (collectionView.frame.size.width) - 16.0,
+                              height: (collectionView.frame.size.height / 4) - 16.0)
+            }
+        }
     }
 }
 
 // MARK: - Collection View Data Source
 extension MVLCharacterListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.characters.count
+        let itemCount = self.characters.count == 0 ? 0 : self.characters.count + 1
+        return itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell",
-                                                            for: indexPath) as? MVLCharacterCell else { return UICollectionViewCell() }
-        cell.bindData(model: self.characters[indexPath.row])
-        return cell
+        if indexPath.row == characters.count {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "loadMoreCell",
+                                                                for: indexPath) as? MVLLoadCell else { return UICollectionViewCell() }
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell",
+                                                                for: indexPath) as? MVLCharacterCell else { return UICollectionViewCell() }
+            cell.bindData(model: self.characters[indexPath.row])
+            return cell
+        }
     }
 }
 
@@ -98,6 +141,26 @@ extension MVLCharacterListVC: MVLCharacterListViewProtocol {
         }
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+        }
+    }
+    
+    func isLoading(_ isLoading: Bool) {
+        DispatchQueue.main.async {
+            if self.characters.count == 0 {
+                if isLoading {
+                    self.loadingView.isHidden = false
+                    self.loadingView.loopAnimation = true
+                    self.loadingView.play()
+                } else {
+                    self.loadingView.isHidden = true
+                    self.loadingView.stop()
+                }
+            } else {
+                if let cell = self.collectionView.cellForItem(at: IndexPath(item: self.characters.count,
+                                                                        section: 0)) as? MVLLoadCell {
+                    cell.isLoading(isLoading)
+                }
+            }
         }
     }
 }
