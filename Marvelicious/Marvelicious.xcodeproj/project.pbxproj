@@ -24,6 +24,10 @@
 		55A7556B211B9D7100E2CE2B /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7556A211B9D7100E2CE2B /* loading.json */; };
 		55A7556E211BB1E700E2CE2B /* MVLLoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7556C211BB1E700E2CE2B /* MVLLoadCell.swift */; };
 		55A7556F211BB1E700E2CE2B /* MVLLoadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A7556D211BB1E700E2CE2B /* MVLLoadCell.xib */; };
+		55F8A652211D90D30006B067 /* MVLBioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8A650211D90D30006B067 /* MVLBioCell.swift */; };
+		55F8A653211D90D30006B067 /* MVLBioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F8A651211D90D30006B067 /* MVLBioCell.xib */; };
+		55F8A656211DA0D90006B067 /* MVLComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8A654211DA0D90006B067 /* MVLComicCell.swift */; };
+		55F8A657211DA0D90006B067 /* MVLComicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F8A655211DA0D90006B067 /* MVLComicCell.xib */; };
 		6007FF6886BCD02F48C71888 /* Pods_MarveliciousTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADEAE7BA1194B3904635B2A /* Pods_MarveliciousTests.framework */; };
 		A0DD21DAA700442870877F20 /* Pods_Marvelicious.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD75BC333E2B1E91BC743DF1 /* Pods_Marvelicious.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,10 @@
 		55A7556A211B9D7100E2CE2B /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		55A7556C211BB1E700E2CE2B /* MVLLoadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLLoadCell.swift; sourceTree = "<group>"; };
 		55A7556D211BB1E700E2CE2B /* MVLLoadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVLLoadCell.xib; sourceTree = "<group>"; };
+		55F8A650211D90D30006B067 /* MVLBioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLBioCell.swift; sourceTree = "<group>"; };
+		55F8A651211D90D30006B067 /* MVLBioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVLBioCell.xib; sourceTree = "<group>"; };
+		55F8A654211DA0D90006B067 /* MVLComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLComicCell.swift; sourceTree = "<group>"; };
+		55F8A655211DA0D90006B067 /* MVLComicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVLComicCell.xib; sourceTree = "<group>"; };
 		92660FED8143DB80EF7F928C /* Pods-Marvelicious.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelicious.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious.release.xcconfig"; sourceTree = "<group>"; };
 		B245AFA2911B5D28A51A7E27 /* Pods-MarveliciousTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarveliciousTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarveliciousTests/Pods-MarveliciousTests.release.xcconfig"; sourceTree = "<group>"; };
 		FAD271543EAB68CD5279A675 /* Pods-Marvelicious.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelicious.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelicious/Pods-Marvelicious.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 		55A7554B211A01F700E2CE2B /* Character Profile */ = {
 			isa = PBXGroup;
 			children = (
+				55F8A64F211D90B10006B067 /* Cells */,
 				55A7554E211A02A900E2CE2B /* MVLCharacterProfileVC.swift */,
 			);
 			path = "Character Profile";
@@ -218,6 +227,17 @@
 				55A75566211B75DE00E2CE2B /* MVLCharacterCell.xib */,
 				55A7556C211BB1E700E2CE2B /* MVLLoadCell.swift */,
 				55A7556D211BB1E700E2CE2B /* MVLLoadCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		55F8A64F211D90B10006B067 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				55F8A650211D90D30006B067 /* MVLBioCell.swift */,
+				55F8A651211D90D30006B067 /* MVLBioCell.xib */,
+				55F8A654211DA0D90006B067 /* MVLComicCell.swift */,
+				55F8A655211DA0D90006B067 /* MVLComicCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -319,8 +339,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F8A653211D90D30006B067 /* MVLBioCell.xib in Resources */,
 				55A75534211A019F00E2CE2B /* LaunchScreen.storyboard in Resources */,
 				55A75568211B75DE00E2CE2B /* MVLCharacterCell.xib in Resources */,
+				55F8A657211DA0D90006B067 /* MVLComicCell.xib in Resources */,
 				55A75531211A019F00E2CE2B /* Assets.xcassets in Resources */,
 				55A7556F211BB1E700E2CE2B /* MVLLoadCell.xib in Resources */,
 				55A7552F211A019F00E2CE2B /* Main.storyboard in Resources */,
@@ -410,9 +432,11 @@
 				55A7555C211A0DCF00E2CE2B /* MVLCharacterListInteractor.swift in Sources */,
 				55A7556E211BB1E700E2CE2B /* MVLLoadCell.swift in Sources */,
 				55A75554211A02D400E2CE2B /* MVLNetworkManager.swift in Sources */,
+				55F8A656211DA0D90006B067 /* MVLComicCell.swift in Sources */,
 				55A75567211B75DE00E2CE2B /* MVLCharacterCell.swift in Sources */,
 				55A75557211A0A2C00E2CE2B /* Bundle.swift in Sources */,
 				55A7552A211A019F00E2CE2B /* AppDelegate.swift in Sources */,
+				55F8A652211D90D30006B067 /* MVLBioCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 342JHW2A2U;
 				INFOPLIST_FILE = Marvelicious/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joshcolley.com.Marvelicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -586,7 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 342JHW2A2U;
 				INFOPLIST_FILE = Marvelicious/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joshcolley.com.Marvelicious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
