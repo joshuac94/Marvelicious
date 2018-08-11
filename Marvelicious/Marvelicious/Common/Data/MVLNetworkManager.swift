@@ -12,7 +12,7 @@ import StringMD5
 // Response Sealed Class
 enum MVLServerResponse<T> {
     case success(T)
-    case failed(Error)
+    case failed(Error?)
 }
 
 protocol MVLNetworkManagerProtocol {

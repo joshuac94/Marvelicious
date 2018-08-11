@@ -11,7 +11,6 @@
 		55A7552F211A019F00E2CE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A7552D211A019F00E2CE2B /* Main.storyboard */; };
 		55A75531211A019F00E2CE2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A75530211A019F00E2CE2B /* Assets.xcassets */; };
 		55A75534211A019F00E2CE2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A75532211A019F00E2CE2B /* LaunchScreen.storyboard */; };
-		55A7553F211A019F00E2CE2B /* MarveliciousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7553E211A019F00E2CE2B /* MarveliciousTests.swift */; };
 		55A7554D211A028600E2CE2B /* MVLCharacterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7554C211A028600E2CE2B /* MVLCharacterListVC.swift */; };
 		55A7554F211A02A900E2CE2B /* MVLCharacterProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7554E211A02A900E2CE2B /* MVLCharacterProfileVC.swift */; };
 		55A75554211A02D400E2CE2B /* MVLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A75553211A02D400E2CE2B /* MVLNetworkManager.swift */; };
@@ -26,6 +25,9 @@
 		55C374E5211DCBDF009FB27E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C374E4211DCBDF009FB27E /* UIColor.swift */; };
 		55EF5E85211ED33D006A2F95 /* loading-red.json in Resources */ = {isa = PBXBuildFile; fileRef = 55EF5E84211ED33D006A2F95 /* loading-red.json */; };
 		55EF5E87211ED358006A2F95 /* loading-grey.json in Resources */ = {isa = PBXBuildFile; fileRef = 55EF5E86211ED358006A2F95 /* loading-grey.json */; };
+		55EF5E8B211ED471006A2F95 /* MVLCharacterListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF5E8A211ED471006A2F95 /* MVLCharacterListViewTests.swift */; };
+		55EF5E8D211ED4BD006A2F95 /* MVLCharacterListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF5E8C211ED4BD006A2F95 /* MVLCharacterListInteractorTests.swift */; };
+		55EF5E8F211ED668006A2F95 /* MVLNetworkManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF5E8E211ED668006A2F95 /* MVLNetworkManagerSpy.swift */; };
 		55F8A652211D90D30006B067 /* MVLBioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8A650211D90D30006B067 /* MVLBioCell.swift */; };
 		55F8A653211D90D30006B067 /* MVLBioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F8A651211D90D30006B067 /* MVLBioCell.xib */; };
 		55F8A656211DA0D90006B067 /* MVLComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8A654211DA0D90006B067 /* MVLComicCell.swift */; };
@@ -54,7 +56,6 @@
 		55A75533211A019F00E2CE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A75535211A019F00E2CE2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A7553A211A019F00E2CE2B /* MarveliciousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarveliciousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55A7553E211A019F00E2CE2B /* MarveliciousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarveliciousTests.swift; sourceTree = "<group>"; };
 		55A75540211A019F00E2CE2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A7554C211A028600E2CE2B /* MVLCharacterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterListVC.swift; sourceTree = "<group>"; };
 		55A7554E211A02A900E2CE2B /* MVLCharacterProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterProfileVC.swift; sourceTree = "<group>"; };
@@ -70,6 +71,10 @@
 		55C374E4211DCBDF009FB27E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		55EF5E84211ED33D006A2F95 /* loading-red.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-red.json"; sourceTree = "<group>"; };
 		55EF5E86211ED358006A2F95 /* loading-grey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-grey.json"; sourceTree = "<group>"; };
+		55EF5E89211ED470006A2F95 /* MarveliciousTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarveliciousTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		55EF5E8A211ED471006A2F95 /* MVLCharacterListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterListViewTests.swift; sourceTree = "<group>"; };
+		55EF5E8C211ED4BD006A2F95 /* MVLCharacterListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLCharacterListInteractorTests.swift; sourceTree = "<group>"; };
+		55EF5E8E211ED668006A2F95 /* MVLNetworkManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLNetworkManagerSpy.swift; sourceTree = "<group>"; };
 		55F8A650211D90D30006B067 /* MVLBioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLBioCell.swift; sourceTree = "<group>"; };
 		55F8A651211D90D30006B067 /* MVLBioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVLBioCell.xib; sourceTree = "<group>"; };
 		55F8A654211DA0D90006B067 /* MVLComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVLComicCell.swift; sourceTree = "<group>"; };
@@ -149,8 +154,9 @@
 		55A7553D211A019F00E2CE2B /* MarveliciousTests */ = {
 			isa = PBXGroup;
 			children = (
-				55A7553E211A019F00E2CE2B /* MarveliciousTests.swift */,
+				55EF5E88211ED452006A2F95 /* Character List Tests */,
 				55A75540211A019F00E2CE2B /* Info.plist */,
+				55EF5E8E211ED668006A2F95 /* MVLNetworkManagerSpy.swift */,
 			);
 			path = MarveliciousTests;
 			sourceTree = "<group>";
@@ -237,6 +243,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		55EF5E88211ED452006A2F95 /* Character List Tests */ = {
+			isa = PBXGroup;
+			children = (
+				55EF5E8A211ED471006A2F95 /* MVLCharacterListViewTests.swift */,
+				55EF5E89211ED470006A2F95 /* MarveliciousTests-Bridging-Header.h */,
+				55EF5E8C211ED4BD006A2F95 /* MVLCharacterListInteractorTests.swift */,
+			);
+			path = "Character List Tests";
+			sourceTree = "<group>";
+		};
 		55F8A64F211D90B10006B067 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +332,7 @@
 					};
 					55A75539211A019F00E2CE2B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 55A75525211A019F00E2CE2B;
 					};
@@ -452,7 +469,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55A7553F211A019F00E2CE2B /* MarveliciousTests.swift in Sources */,
+				55EF5E8F211ED668006A2F95 /* MVLNetworkManagerSpy.swift in Sources */,
+				55EF5E8D211ED4BD006A2F95 /* MVLCharacterListInteractorTests.swift in Sources */,
+				55EF5E8B211ED471006A2F95 /* MVLCharacterListViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,12 +652,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 342JHW2A2U;
 				INFOPLIST_FILE = MarveliciousTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joshcolley.com.MarveliciousTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarveliciousTests/Character List Tests/MarveliciousTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvelicious.app/Marvelicious";
@@ -651,12 +673,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 342JHW2A2U;
 				INFOPLIST_FILE = MarveliciousTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joshcolley.com.MarveliciousTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarveliciousTests/Character List Tests/MarveliciousTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvelicious.app/Marvelicious";

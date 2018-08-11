@@ -15,16 +15,18 @@ protocol MVLCharacterListInteractorProtocol {
 class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
     
     var view: MVLCharacterListViewProtocol!
+    var networkManager: MVLNetworkManagerProtocol!
     
     init(view: MVLCharacterListViewProtocol) {
         self.view = view
+        self.networkManager = MVLNetworkManager.shared
     }
     
     // MARK: - Implement Interactor Protocol
     func getCharacters(offset: Int) {
         self.view.isLoading(true)
         let url = "https://gateway.marvel.com/v1/public/characters"
-        MVLNetworkManager.shared.get(endpoint: url, offset: offset) { (response) in
+        networkManager.get(endpoint: url, offset: offset) { (response) in
             switch response {
             case .success(let data):
                 self.view.isLoading(false)
@@ -36,7 +38,8 @@ class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
                 }
             case .failed(let error):
                 self.view.isLoading(false)
-                self.view.displayError(message: error.localizedDescription)
+                let genericErrror = "An error occured, please try again."
+                self.view.displayError(message: error?.localizedDescription ?? genericErrror)
             }
         }
     }
