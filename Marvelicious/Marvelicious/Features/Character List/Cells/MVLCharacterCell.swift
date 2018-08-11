@@ -12,7 +12,6 @@ import SDWebImage
 class MVLCharacterCell: UICollectionViewCell {
     
     @IBOutlet weak var wrapperView: UIView!
-    @IBOutlet weak var textWrapperView: UIView!
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterInfoLabel: UILabel!
@@ -20,13 +19,21 @@ class MVLCharacterCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        characterImageView.layer.cornerRadius = 12.0
+        characterImageView.layer.cornerRadius = 6.0
         characterImageView.clipsToBounds = true
+        characterImageView.layer.borderWidth = 0.3
+        characterImageView.layer.borderColor = UIColor.gray.cgColor
         
         wrapperView.clipsToBounds = true
-        wrapperView.layer.cornerRadius = 12.0
-        wrapperView.layer.borderColor = UIColor.black.cgColor
-        wrapperView.layer.borderWidth = 2.0
+        wrapperView.layer.cornerRadius = 6.0
+        wrapperView.layer.borderWidth = 0.3
+        wrapperView.layer.borderColor = UIColor.gray.cgColor
+
+        wrapperView.layer.shadowColor = UIColor.gray.cgColor
+        wrapperView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        wrapperView.layer.shadowOpacity = 0.35
+        wrapperView.layer.shadowRadius = 3.0
+        wrapperView.layer.masksToBounds = false
     }
     
     func bindData(model: MVLCharacter) {

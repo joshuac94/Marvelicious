@@ -34,8 +34,9 @@ class MVLCharacterListInteractor: MVLCharacterListInteractorProtocol {
                 } else {
                     fatalError("@ERROR: Failed to decode response")
                 }
-            case .failed(_):
+            case .failed(let error):
                 self.view.isLoading(false)
+                self.view.displayError(message: error.localizedDescription)
             }
         }
     }

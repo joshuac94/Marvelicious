@@ -29,9 +29,13 @@ class MVLCharacterProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        characterNameLabel.text = character?.name
+        
+        characterImageView.layer.cornerRadius = 6.0
+        characterImageView.clipsToBounds = true
+        characterImageView.layer.borderWidth = 0.3
+        characterImageView.layer.borderColor = UIColor.gray.cgColor
         if let path = character?.thumbnail?.path, let type = character?.thumbnail?.fileType {
-            let urlString = "\(path)/portrait_incredible.\(type)"
+            let urlString = "\(path)/standard_fantastic.\(type)"
             let url = URL(string: urlString)
             
             characterImageView.sd_setImage(with: url,
@@ -87,7 +91,7 @@ extension MVLCharacterProfileVC: UITableViewDelegate {
         view.backgroundColor = self.view.backgroundColor
         
         let label = UILabel(frame: CGRect(x: 16.0, y: 0, width: tableView.frame.width, height: 35.0))
-        label.textColor = UIColor.white
+        label.textColor = UIColor.darkText
         label.font = UIFont(name: "Helvetica-Bold", size: 24.0)
         
         guard let section = MVLProfileSection(rawValue: section) else { return nil }

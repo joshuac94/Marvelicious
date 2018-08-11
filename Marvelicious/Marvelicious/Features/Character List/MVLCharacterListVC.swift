@@ -11,6 +11,7 @@ import Lottie
 
 protocol MVLCharacterListViewProtocol {
     func displayCharacters(_ models: [MVLCharacter])
+    func displayError(message: String)
     func isLoading(_ isLoading: Bool)
 }
 
@@ -34,6 +35,7 @@ class MVLCharacterListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.darkRed()
         collectionView.contentInset = UIEdgeInsetsMake(8.0, 8.0, 8.0, 8.0)
         
         let characterNib = UINib(nibName: "MVLCharacterCell", bundle: nil)
@@ -54,7 +56,7 @@ class MVLCharacterListVC: UIViewController {
     
     // MARK: - Helper Methods
     fileprivate func setupLoadingView() {
-        loadingView = LOTAnimationView(name: "loading")
+        loadingView = LOTAnimationView(name: "loading-red")
         self.view.addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.widthAnchor.constraint(equalToConstant: 85.0).isActive = true
@@ -96,19 +98,17 @@ extension MVLCharacterListVC: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        switch UIDevice.current.orientation {
-        case .landscapeLeft, .landscapeRight:
-            return CGSize(width: (collectionView.frame.size.width / 3) - 16.0,
-                          height: (collectionView.frame.size.height) - 16.0)
-        default:
-            if indexPath.row == characters.count {
-                return CGSize(width: (collectionView.frame.size.width) - 16.0,
-                              height: (collectionView.frame.size.height / 6) - 16.0)
-            } else {
-                return CGSize(width: (collectionView.frame.size.width) - 16.0,
-                              height: (collectionView.frame.size.height / 4) - 16.0)
-            }
+        var width: CGFloat = (collectionView.frame.size.width) - 16.0
+        var height: CGFloat = (collectionView.frame.size.height / 6) - 32.0
+        
+        let orientation = UIDevice.current.orientation
+        
+        if orientation == .landscapeLeft || orientation == .landscapeRight {
+            width = (collectionView.frame.size.width / 2) - 16.0
+            height = (collectionView.frame.size.height / 3) - 32.0
         }
+        
+        return CGSize(width: width, height: height)
     }
 }
 
@@ -142,6 +142,17 @@ extension MVLCharacterListVC: MVLCharacterListViewProtocol {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+    
+    func displayError(message: String) {
+        let vc = UIAlertController(title: "Oops...!!!",
+                                   message: message,
+                                   preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Try Again", style: .default) { (_) in
+            self.interactor.getCharacters(offset: self.characters.count)
+        }
+        vc.addAction(retryAction)
+        self.present(vc, animated: true, completion: nil)
     }
     
     func isLoading(_ isLoading: Bool) {

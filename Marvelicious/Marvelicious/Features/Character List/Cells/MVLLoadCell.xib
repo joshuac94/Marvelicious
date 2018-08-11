@@ -25,11 +25,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load more..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG2-eT-s3h">
                                 <rect key="frame" x="134" y="50" width="153" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uG2-eT-s3h" firstAttribute="centerY" secondItem="IcE-TR-Jqv" secondAttribute="centerY" id="Fan-s5-JUy"/>
                             <constraint firstItem="uG2-eT-s3h" firstAttribute="centerX" secondItem="IcE-TR-Jqv" secondAttribute="centerX" id="Vro-RP-tuF"/>

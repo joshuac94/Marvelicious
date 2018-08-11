@@ -24,14 +24,14 @@ class MVLLoadCell: UICollectionViewCell, MVLLoadCellDelegate {
         super.awakeFromNib()
         
         wrapperView.layer.cornerRadius = 12.0
-        wrapperView.layer.borderColor = UIColor.black.cgColor
-        wrapperView.layer.borderWidth = 2.0
+        wrapperView.layer.borderColor = UIColor.darkGray.cgColor
+        wrapperView.layer.borderWidth = 0.3
         
         setupLoadingView()
     }
     
     fileprivate func setupLoadingView() {
-        loadingView = LOTAnimationView(name: "loading")
+        loadingView = LOTAnimationView(name: "loading-grey")
         loadingView.isHidden = true
         wrapperView.addSubview(loadingView)
 
