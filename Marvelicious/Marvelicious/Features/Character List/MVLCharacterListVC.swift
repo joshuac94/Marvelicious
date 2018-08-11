@@ -44,7 +44,6 @@ class MVLCharacterListVC: UIViewController {
         let loadNib = UINib(nibName: "MVLLoadCell", bundle: nil)
         collectionView.register(loadNib, forCellWithReuseIdentifier: "loadMoreCell")
         
-        
         setupLoadingView()
         interactor.getCharacters(offset: characters.count)
     }

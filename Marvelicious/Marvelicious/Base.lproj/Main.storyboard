@@ -13,7 +13,7 @@
         <!--Characters-->
         <scene sceneID="kHN-vl-ndN">
             <objects>
-                <viewController id="kpf-qF-Y24" customClass="MVLCharacterListVC" customModule="Marvelicious" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MVLCharacterListVC" id="kpf-qF-Y24" customClass="MVLCharacterListVC" customModule="Marvelicious" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wLC-Zb-ddM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
