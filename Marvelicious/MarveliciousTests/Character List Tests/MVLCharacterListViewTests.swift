@@ -29,6 +29,9 @@ class MVLCharacterListViewTests: XCTestCase {
         window = UIWindow()
     }
     
+//    func displayError(message: String)
+//    func isLoading(_ isLoading: Bool)
+    
     func testDidCallGetCharacters() {
         // Given
         window.addSubview(sut.view)
@@ -38,6 +41,28 @@ class MVLCharacterListViewTests: XCTestCase {
         
         // Then
         XCTAssertTrue(interactorSpy.didCallGetCharacters)
+    }
+    
+    func testDisplayCharacter() {
+        // Given
+        window.addSubview(sut.view)
+        let character = MVLCharacter(id: 001,
+                                     name: "Iron Man",
+                                     description: "Bloke in a metal suit",
+                                     thumbnail: MVLThumbnail(path: "imagePath",
+                                                             fileType: "extension"),
+                                     comics: MVLComicsList(available: 1,
+                                                           items: [MVLComic(name: "Comic name")]))
+        
+        // When
+        sut.displayCharacters([character])
+        
+        // Then
+        let index = IndexPath(row: 0, section: 0)
+        let cell = sut.collectionView(sut.collectionView, cellForItemAt: index) as? MVLCharacterCell
+        
+        XCTAssertEqual("Iron Man", cell?.characterNameLabel.text!)
+        XCTAssertEqual("Comic apperances: 1", cell?.characterInfoLabel.text!)
     }
 }
 
